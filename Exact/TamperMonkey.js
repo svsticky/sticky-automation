@@ -23,7 +23,7 @@
   // Create the button
   const mongooseButton = $('<button/>')
   .text('Insert Mongoose')
-  .click(openInsert)
+  .on("click", openInsert)
   .addClass("exButton");
 
   //Append buttons
@@ -81,7 +81,7 @@ var Mongoose = {
                   inserted = true;
               } else {
                   const delRow = $(row).find(Config.ExactOnline.delRow);
-                  delRow.click();
+                  delRow.trigger("click");
               }
           }
 
@@ -122,7 +122,7 @@ var Mongoose = {
           //Add as many rows as transactions
           var addRow = $(row).find(Config.ExactOnline.addRow);
           for (var i = transactions.length - 2; i >= 0; i--) {
-              addRow.click();
+              addRow.trigger("click");
           }
 
           //Fill rows with data
